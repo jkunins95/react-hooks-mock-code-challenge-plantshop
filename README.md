@@ -34,9 +34,25 @@ The base URL for your backend is: `http://localhost:6001`
 As a user:
 
 1. When the app starts, I can see all plants.
+  - Add state to keep track of all the plants
+    - where does this state belong? (PlantPage)
+  - Make a GET /plants to get the plant data from the API
+  - Update state with that plant data
+  - Use an array of PlantCards to display my plant objects
+
 2. I can add a new plant to the page by submitting the form.
+   - Set up a controlled form by connecting each input to some state
+   - Handle the form being submitted and send the data to the API POST /plants
+   - Update state!!! - add a new plant to the array in the PlantList component
+
 3. I can mark a plant as "sold out".
+  - add some isInStock state to the PlantCard
+  - toggle that state when the button is clicked
+  - conditionally render a button based on the isInStock state
+  
 4. I can search for plants by their name and see a filtered list of plants.
+   - add state to keep track of the search term being typed by the user
+   - use that state to filter the list of plants in our PlantList component so only plants that match the searh are displayed
 
 ### Endpoints for Core Deliverables
 
