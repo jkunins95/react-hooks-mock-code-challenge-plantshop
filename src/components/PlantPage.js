@@ -7,14 +7,16 @@ function PlantPage() {
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
-    
+    fetch("http://localhost:6001/plants")
+    .then(resp => resp.json())
+    .then(plant => setPlants(plant))
   }, [])
 
   return (
     <main>
       <NewPlantForm />
       <Search />
-      <PlantList />
+      <PlantList plants={plants} />
     </main>
   );
 }
