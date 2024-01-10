@@ -10,11 +10,16 @@ function PlantPage() {
     fetch("http://localhost:6001/plants")
     .then(resp => resp.json())
     .then(plant => setPlants(plant))
-  }, [])
+  }, []);
+
+  function handleAddNewPlant(newPlant) {
+    const updatedPlants = [...plants, newPlant];
+    setPlants(updatedPlants);
+  }
 
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm onAddNewPlant={handleAddNewPlant} />
       <Search />
       <PlantList plants={plants} />
     </main>
